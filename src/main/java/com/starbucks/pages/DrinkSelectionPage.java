@@ -2,7 +2,7 @@ package com.starbucks.pages;
 
 import com.starbucks.Elements.Elements;
 import org.openqa.selenium.WebDriver;
-import com.starbucks.utils.TestUtils;
+import com.starbucks.utils.defaultmethods;
 
 public class DrinkSelectionPage extends Base {
 
@@ -11,17 +11,17 @@ public class DrinkSelectionPage extends Base {
     }
 
     public void selectDrink(String drinkName) {
-        TestUtils.waitForElementToBeVisible(driver, Elements.drinkSelector, 10);
-        TestUtils.clearAndSendText(driver, Elements.drinkSelector, drinkName);
+        defaultmethods.waitForElementToBeVisible(Elements.drinkSelector, 10);
+        defaultmethods.clearAndSendText(Elements.drinkSelector, drinkName);
     }
 
     public void addToCart() {
-        TestUtils.waitForElementToBeClickable(driver, Elements.addToCartButton, 10);
+        defaultmethods.waitForElementToBeClickable(Elements.addToCartButton, 10);
         clickElement(Elements.addToCartButton);
     }
 
     public void viewCart() {
-        TestUtils.waitForElementToBeClickable(driver, Elements.cartIcon, 10);
+        defaultmethods.waitForElementToBeClickable(Elements.cartIcon, 10);
         clickElement(Elements.cartIcon);
     }
 }

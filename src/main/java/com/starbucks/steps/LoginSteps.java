@@ -3,7 +3,7 @@ package com.starbucks.steps;
 import com.starbucks.Elements.Elements;
 import com.starbucks.pages.LoginPage;
 import com.starbucks.utils.ExcelUtil;
-import com.starbucks.utils.TestUtils;
+import com.starbucks.utils.defaultmethods;
 import org.openqa.selenium.WebDriver;
 import org.junit.Assert;
 import io.cucumber.java.en.Given;
@@ -33,11 +33,12 @@ public class LoginSteps {
 
     @When("User enters valid username and password")
     public void userEntersValidUsernameAndPassword() {
-        String username = excelUtil.getCellData(1, 2); // Assume row 1, column 0 is the username
+        String username = excelUtil.getCellData(1, 2);
         String password = excelUtil.getCellData(1, 3);
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
         loginPage.clickLoginButton();
+        loginPage.clickLogoutIfRequired();
     }
 
     @Then("User should be redirected to the home page")
@@ -47,7 +48,7 @@ public class LoginSteps {
 
     @When("User enters invalid username and password")
     public void invalidUsernameAndPassword() {
-        String username = excelUtil.getCellData(2, 2); // Assume row 1, column 0 is the username
+        String username = excelUtil.getCellData(2, 2);
         String password = excelUtil.getCellData(2, 3);
         loginPage.enterUsername(username);
         loginPage.enterPassword(password);
@@ -56,10 +57,10 @@ public class LoginSteps {
 
     @Then("User should be redirected to the dashboard")
     public void userShouldBeLoggedInAndRedirectedToTheDashboard() {
-        if (TestUtils.isElementExist(Elements.welcomeDownArrow,20)){
-            TestUtils.click(Elements.welcomeDownArrow);
+        if (defaultmethods.isElementExist(Elements.welcomeDownArrow,20)){
+            defaultmethods.click(Elements.welcomeDownArrow);
         }
-        TestUtils.sleep(5);
+        defaultmethods.sleep(5);
         Assert.assertTrue("Dashboard page verification failed.", driver.getCurrentUrl().contains("dashboard"));
 
     }
@@ -81,6 +82,13 @@ public class LoginSteps {
     public void userVerifyTheDashboardStarsAndRewards() {
                 Assert.assertTrue("Empty fields error message not displayed.", loginPage.isInvalidCredentialsErrorDisplayed());
 
+
+    }
+
+    @Then("User logout from the website")
+    public void userLogoutFromTheWebsite() {
+        loginPage.clickOnUserIcon();
+        loginPage.clickLogoutButton();
 
     }
 }

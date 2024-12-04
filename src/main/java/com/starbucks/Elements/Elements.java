@@ -11,9 +11,10 @@ public class Elements {
     public static final By usernameField = By.xpath("//input[@formcontrolname=\"emailOrMobile\"]");
     public static final By passwordField = By.xpath("//input[@formcontrolname=\"password\"]");
     public static final By loginButton = By.xpath("//button[@type=\"submit\"]");
-    public static final By logoutButton = By.id("logout");
     public static final By errorMsg = By.xpath("//*[contains(text(),'Retry with correct details')]");
     public static final By welcomeDownArrow = By.xpath("//span[@class=\"arrow\"]");
+    public static final By logoutButton = By.xpath("//*[contains(text(),\"LOG OUT\")]");
+    public static final By logout = By.xpath("//button[contains(text(),\"Log out\")]");
 
 
     // DrinkSelectionPage Locators

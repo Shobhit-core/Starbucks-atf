@@ -4,7 +4,8 @@ Feature: Login functionality of Starbucks website
   Scenario: Valid login with correct credentials
     Given User navigates to the Starbucks login page
     When User enters valid username and password
-    Then User should be redirected to the dashboard
+    And User should be redirected to the dashboard
+    Then User logout from the website
 
   @guestUser
   Scenario: Verify the dashboard with guest user

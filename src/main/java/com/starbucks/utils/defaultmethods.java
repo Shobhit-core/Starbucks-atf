@@ -10,10 +10,10 @@ import java.time.Duration;
 
 import static com.starbucks.steps.Hooks.driver;
 
-public class TestUtils {
+public class defaultmethods {
 
     // Wait for an element to be visible
-    public static void waitForElementToBeVisible(WebDriver driver, By locator, long timeoutInSeconds) {
+    public static void waitForElementToBeVisible(By locator, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.visibilityOfElementLocated(locator));
     }
@@ -24,13 +24,13 @@ public class TestUtils {
     }
 
     // Wait for an element to be clickable
-    public static void waitForElementToBeClickable(WebDriver driver, By locator, long timeoutInSeconds) {
+    public static void waitForElementToBeClickable(By locator, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.elementToBeClickable(locator));
     }
 
     // Wait for an element to be present in the DOM
-    public static void waitForElementPresence(WebDriver driver, By locator, long timeoutInSeconds) {
+    public static void waitForElementPresence(By locator, long timeoutInSeconds) {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(timeoutInSeconds));
         wait.until(ExpectedConditions.presenceOfElementLocated(locator));
     }
@@ -45,7 +45,7 @@ public class TestUtils {
     }
 
     // Method to switch to an iframe using any locator (XPath, CSS selector, etc.)
-    public static void switchToIframe(WebDriver driver, By iframeLocator) {
+    public static void switchToIframe(By iframeLocator) {
         try {
             WebElement iframe = driver.findElement(iframeLocator);
             driver.switchTo().frame(iframe); // Switch to iframe
@@ -55,7 +55,7 @@ public class TestUtils {
     }
 
     // Method to switch to an iframe using its index (0-based index)
-    public static void switchToIframeByIndex(WebDriver driver, int iframeIndex) {
+    public static void switchToIframeByIndex(int iframeIndex) {
         try {
             driver.switchTo().frame(iframeIndex); // Switch to iframe by index
         } catch (Exception e) {
@@ -64,7 +64,7 @@ public class TestUtils {
     }
 
     // Method to switch back to the default content (main page)
-    public static void switchToDefaultContent(WebDriver driver) {
+    public static void switchToDefaultContent() {
         try {
             driver.switchTo().defaultContent(); // Switch back to the main page
         } catch (Exception e) {
@@ -72,13 +72,13 @@ public class TestUtils {
         }
     }
     // Get text of an element
-    public static String getElementText(WebDriver driver, By locator) {
+    public static String getElementText(By locator) {
         WebElement element = driver.findElement(locator);
         return element.getText();
     }
 
     // Clear text field and send new text
-    public static void clearAndSendText(WebDriver driver, By locator, String text) {
+    public static void clearAndSendText(By locator, String text) {
         WebElement element = driver.findElement(locator);
         element.clear();
         element.sendKeys(text);
