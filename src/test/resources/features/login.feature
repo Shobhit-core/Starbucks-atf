@@ -17,6 +17,7 @@ Feature: Login functionality of Starbucks website
     Given User navigates to the Starbucks login page
     When User enters invalid username and password
     Then User should see an error message indicating invalid credentials
+    Then User logout from the website
 
   @dashboardStars
   Scenario: Verify the stars and rewards on the dashboard
