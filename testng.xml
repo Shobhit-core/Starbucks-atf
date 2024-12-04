@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="CompleteTestSuite" parallel="tests" thread-count="3">
+    <!-- Test for Login functionality -->
+    <test name="LoginTest" >
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <!-- Test class for login functionality -->
+            <class name="com.starbucks.tests.LoginTest"/>
+        </classes>
+    </test>
+
+<!--    &lt;!&ndash; Test for Search functionality &ndash;&gt;-->
+<!--    <test name="SearchTest">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            &lt;!&ndash; Test class for search functionality &ndash;&gt;-->
+<!--            <class name="com.starbucks.tests.SearchTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <!-- Test for CheckoutSteps functionality -->
+    <test name="CheckoutTest">
+        <parameter name="browser" value="edge"/>
+        <classes>
+            <!-- Test class for checkout functionality -->
+            <class name="com.starbucks.tests.CheckoutTest"/>
+        </classes>
+    </test>
+
+<!--    &lt;!&ndash; Test for Registration functionality &ndash;&gt;-->
+<!--    <test name="RegistrationTest">-->
+<!--        <parameter name="browser" value="chrome"/>-->
+<!--        <classes>-->
+<!--            &lt;!&ndash; Test class for registration functionality &ndash;&gt;-->
+<!--            <class name="com.yourcompany.tests.RegistrationTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+    <!-- Test for Profile functionality -->
+<!--    <test name="ProfileTest">-->
+<!--        <parameter name="browser" value="firefox"/>-->
+<!--        <classes>-->
+<!--            &lt;!&ndash; Test class for user profile functionality &ndash;&gt;-->
+<!--            <class name="com.yourcompany.tests.ProfileTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+<!--    &lt;!&ndash; Test for Logout functionality &ndash;&gt;-->
+<!--    <test name="LogoutTest">-->
+<!--        <parameter name="browser" value="edge"/>-->
+<!--        <classes>-->
+<!--            &lt;!&ndash; Test class for logout functionality &ndash;&gt;-->
+<!--            <class name="com.yourcompany.tests.LogoutTest"/>-->
+<!--        </classes>-->
+<!--    </test>-->
+
+</suite>
