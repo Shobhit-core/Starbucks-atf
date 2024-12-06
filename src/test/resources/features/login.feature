@@ -17,15 +17,11 @@ Feature: Login functionality of Starbucks website
     Given User navigates to the Starbucks login page
     When User enters invalid username and password
     Then User should see an error message indicating invalid credentials
-    Then User logout from the website
 
-  @dashboardStars
+  @dashboard
   Scenario: Verify the stars and rewards on the dashboard
     Given User navigates to the Starbucks login page
     When User enters valid username and password
     And User should be redirected to the dashboard
     Then User verify the dashboard stars and rewards
-
-#  Scenario: Login with empty fields
-#    Given User navigates to the Starbucks login page
-#    Then User should see an error message indicating that fields cannot be empty
+    
